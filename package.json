@@ -1,0 +1,25 @@
+{
+  "name": "farfish",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "backend"
+  ],
+  "scripts": {
+    "dev:user": "pnpm --filter user-app dev",
+    "dev:provider": "pnpm --filter provider-dashboard dev",
+    "dev:admin": "pnpm --filter admin-panel dev",
+    "dev:api": "pnpm --filter farfish-api dev",
+    "build": "pnpm -r build",
+    "preview:user": "pnpm --filter user-app preview",
+    "preview:provider": "pnpm --filter provider-dashboard preview",
+    "preview:admin": "pnpm --filter admin-panel preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.0",
+    "pnpm": "^9.0.0",
+    "vite": "^5.0.0"
+  }
+}
