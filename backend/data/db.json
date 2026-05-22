@@ -1,0 +1,245 @@
+{
+  "users": [
+    {
+      "id": "user-1",
+      "name": "Laila Al-Sabah",
+      "phone": "+96512345678",
+      "email": "laila@example.com",
+      "created_at": "2026-05-20T11:13:56.737Z"
+    }
+  ],
+  "providers": [
+    {
+      "id": "provider-1",
+      "business_name": "Desert Pulse",
+      "contact_name": "Khaled",
+      "phone": "+96598765432",
+      "email": "khaled@desertpulse.kw",
+      "category": "Adventure",
+      "status": "approved",
+      "commission_rate": 0.15,
+      "created_at": "2026-05-20T11:13:56.746Z"
+    },
+    {
+      "id": "provider-2",
+      "business_name": "Sea Breeze Tours",
+      "contact_name": "Sara",
+      "phone": "+9655556677",
+      "email": "sara@seabreeze.kw",
+      "category": "Outdoor",
+      "status": "pending",
+      "commission_rate": 0.15,
+      "created_at": "2026-05-20T11:13:56.746Z"
+    },
+    {
+      "id": "provider-3",
+      "business_name": "Kuwait Wave Riders",
+      "contact_name": "Faisal Al-Mutairi",
+      "phone": "+96599112233",
+      "email": "faisal@kwaveride.kw",
+      "category": "Adventure",
+      "status": "approved",
+      "commission_rate": 0.15,
+      "created_at": "2026-05-21T09:00:00.000Z"
+    },
+    {
+      "id": "provider-4",
+      "business_name": "The Clay Studio Kuwait",
+      "contact_name": "Nour Al-Rashid",
+      "phone": "+96566778899",
+      "email": "nour@claystudio.kw",
+      "category": "Experiences",
+      "status": "approved",
+      "commission_rate": 0.15,
+      "created_at": "2026-05-21T09:00:00.000Z"
+    }
+  ],
+  "activities": [
+    {
+      "id": "activity-1",
+      "provider_id": "provider-1",
+      "name_ar": "جولة سفاري الصحراء",
+      "name_en": "Desert Safari Adventure",
+      "description_ar": "استمتع برحلة سفاري مثيرة في الكثبان الرملية مع برنامج مليء بالمغامرة.",
+      "description_en": "Enjoy an exciting desert safari through dunes with a full adventure program.",
+      "category": "Outdoor",
+      "price_per_person": 45,
+      "max_capacity": 12,
+      "photos": [
+        "https://images.unsplash.com/photo-1624062999726-083e5268525d?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1695878868496-fcbd6ef47f57?auto=format&fit=crop&w=800&q=80"
+      ],
+      "location": "{\"address\":\"Al Jahra\",\"lat\":29.3697,\"lng\":47.9783}",
+      "availability": "[{\"date\":\"2026-05-22\",\"slots\":[\"09:00\",\"13:00\",\"17:00\"]},{\"date\":\"2026-05-23\",\"slots\":[\"10:00\",\"14:00\",\"18:00\"]}]",
+      "status": "active",
+      "rating": 4.8,
+      "created_at": "2026-05-20T11:13:56.747Z"
+    },
+    {
+      "id": "activity-2",
+      "provider_id": "provider-1",
+      "name_ar": "عضوية ممارسة التزلج على الماء",
+      "name_en": "Water Ski Experience",
+      "description_ar": "نشاط مائي ممتع في الخليج مع مدربين محترفين.",
+      "description_en": "A fun water skiing experience in the Gulf with expert trainers.",
+      "category": "Adventure",
+      "price_per_person": 55,
+      "max_capacity": 8,
+      "photos": [
+        "https://images.unsplash.com/photo-1679003522678-4d335a8f748d?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1588310558566-b983c7d257e4?auto=format&fit=crop&w=800&q=80"
+      ],
+      "location": "{\"address\":\"Salmiya\",\"lat\":29.3182,\"lng\":48.0611}",
+      "availability": "[{\"date\":\"2026-05-22\",\"slots\":[\"11:00\",\"15:00\"]},{\"date\":\"2026-05-24\",\"slots\":[\"12:00\",\"16:00\"]}]",
+      "status": "active",
+      "rating": 4.7,
+      "created_at": "2026-05-20T11:13:56.747Z"
+    },
+    {
+      "id": "activity-3",
+      "provider_id": "provider-3",
+      "name_ar": "ركوب أمواج الويك بورد",
+      "name_en": "Wakeboarding",
+      "description_ar": "تجربة ركوب الأمواج على لوح الويك بورد في مياه الخليج مع مدربين معتمدين وتجهيزات متكاملة.",
+      "description_en": "Ride the Gulf waves on a wakeboard with certified instructors and full equipment provided. Suitable for beginners and pros alike.",
+      "category": "Adventure",
+      "price_per_person": 65,
+      "max_capacity": 6,
+      "photos": [
+        "https://images.unsplash.com/photo-1531001602318-1916852b9205?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1528569449293-fdc35b48952d?auto=format&fit=crop&w=800&q=80"
+      ],
+      "location": "{\"address\":\"Marina Crescent, Salmiya\",\"lat\":29.3350,\"lng\":48.0700}",
+      "availability": "[{\"date\":\"2026-05-22\",\"slots\":[\"08:00\",\"10:00\",\"14:00\"]},{\"date\":\"2026-05-23\",\"slots\":[\"08:00\",\"11:00\",\"15:00\"]},{\"date\":\"2026-05-25\",\"slots\":[\"09:00\",\"13:00\"]}]",
+      "status": "active",
+      "rating": 4.9,
+      "created_at": "2026-05-21T09:00:00.000Z"
+    },
+    {
+      "id": "activity-4",
+      "provider_id": "provider-3",
+      "name_ar": "ركوب الطائرة الورقية على الماء",
+      "name_en": "Kiteboarding",
+      "description_ar": "تعلم ركوب الطائرة الورقية على الماء على شاطئ الكويت مع معلمين ذوي خبرة عالية وتجهيزات احترافية.",
+      "description_en": "Harness the Gulf winds on a kiteboard along Kuwait's coast. Our IKO-certified instructors take you from zero to riding in a single session.",
+      "category": "Adventure",
+      "price_per_person": 80,
+      "max_capacity": 4,
+      "photos": [
+        "https://images.unsplash.com/photo-1611517533081-a74f3d409ce9?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1564499504739-bc4fc2ae8cba?auto=format&fit=crop&w=800&q=80"
+      ],
+      "location": "{\"address\":\"Messila Beach, Kuwait City\",\"lat\":29.2800,\"lng\":48.0500}",
+      "availability": "[{\"date\":\"2026-05-22\",\"slots\":[\"07:00\",\"09:00\"]},{\"date\":\"2026-05-24\",\"slots\":[\"07:00\",\"09:00\",\"16:00\"]},{\"date\":\"2026-05-26\",\"slots\":[\"07:00\",\"10:00\"]}]",
+      "status": "active",
+      "rating": 4.8,
+      "created_at": "2026-05-21T09:00:00.000Z"
+    },
+    {
+      "id": "activity-5",
+      "provider_id": "provider-4",
+      "name_ar": "ورشة الفخار",
+      "name_en": "Pottery Workshop",
+      "description_ar": "اكتشف عالم الفخار في ورشة عمل تفاعلية ممتعة. تعلم تشكيل الطين على العجلة وإنشاء قطعتك الخاصة للمنزل.",
+      "description_en": "Get your hands muddy at our relaxed pottery wheel workshop. You'll shape, trim, and glaze your own ceramic piece to take home — no experience needed.",
+      "category": "Experiences",
+      "price_per_person": 28,
+      "max_capacity": 10,
+      "photos": [
+        "https://images.unsplash.com/photo-1607556671927-78a6605e290b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1609881583302-61548332039c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "location": "{\"address\":\"Qibla, Kuwait City\",\"lat\":29.3700,\"lng\":47.9800}",
+      "availability": "[{\"date\":\"2026-05-22\",\"slots\":[\"11:00\",\"14:00\",\"17:00\"]},{\"date\":\"2026-05-23\",\"slots\":[\"11:00\",\"14:00\"]},{\"date\":\"2026-05-24\",\"slots\":[\"10:00\",\"13:00\",\"16:00\"]}]",
+      "status": "active",
+      "rating": 4.9,
+      "created_at": "2026-05-21T09:00:00.000Z"
+    },
+    {
+      "id": "activity-6",
+      "provider_id": "provider-4",
+      "name_ar": "ورشة الفنون والحرف اليدوية",
+      "name_en": "Arts & Crafts Workshop",
+      "description_ar": "ورشة إبداعية للعائلات والأطفال تشمل الرسم وصنع المجوهرات والأعمال اليدوية في بيئة ممتعة وملهمة.",
+      "description_en": "A guided creative session covering painting, collage, and handmade jewellery. Perfect for families, date nights, or solo explorers who want to make something beautiful.",
+      "category": "Family",
+      "price_per_person": 18,
+      "max_capacity": 15,
+      "photos": [
+        "https://images.unsplash.com/photo-1607211851821-8be3cd6146f0?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1648942697933-d53379119b22?auto=format&fit=crop&w=800&q=80"
+      ],
+      "location": "{\"address\":\"Qibla, Kuwait City\",\"lat\":29.3705,\"lng\":47.9805}",
+      "availability": "[{\"date\":\"2026-05-22\",\"slots\":[\"10:00\",\"13:00\",\"16:00\"]},{\"date\":\"2026-05-23\",\"slots\":[\"10:00\",\"14:00\",\"17:00\"]},{\"date\":\"2026-05-25\",\"slots\":[\"11:00\",\"15:00\"]}]",
+      "status": "active",
+      "rating": 4.7,
+      "created_at": "2026-05-21T09:00:00.000Z"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "booking-1779290812820",
+      "user_id": "user-1",
+      "activity_id": "activity-2",
+      "provider_id": "provider-1",
+      "date": "2026-05-22",
+      "time_slot": "11:00",
+      "guests": 1,
+      "total_price": 55,
+      "commission": 8.25,
+      "net_payout": 46.75,
+      "status": "confirmed",
+      "payment_status": "paid",
+      "reference_number": "FF-812794",
+      "created_at": "2026-05-20T15:26:52.820Z"
+    },
+    {
+      "id": "booking-1779291123039",
+      "user_id": "user-1",
+      "activity_id": "activity-2",
+      "provider_id": "provider-1",
+      "date": "2026-05-22",
+      "time_slot": "11:00",
+      "guests": 1,
+      "total_price": 55,
+      "commission": 8.25,
+      "net_payout": 46.75,
+      "status": "confirmed",
+      "payment_status": "paid",
+      "reference_number": "FF-123034",
+      "created_at": "2026-05-20T15:32:03.039Z"
+    },
+    {
+      "id": "booking-1779307138330",
+      "user_id": "user-1",
+      "activity_id": "activity-1",
+      "provider_id": "provider-1",
+      "date": "2026-05-22",
+      "time_slot": "09:00",
+      "guests": 1,
+      "total_price": 45,
+      "commission": 6.75,
+      "net_payout": 38.25,
+      "status": "confirmed",
+      "payment_status": "paid",
+      "reference_number": "FF-138312",
+      "created_at": "2026-05-20T19:58:58.330Z"
+    },
+    {
+      "id": "booking-1779392100531",
+      "user_id": "user-1",
+      "activity_id": "activity-2",
+      "provider_id": "provider-1",
+      "date": "2026-05-22",
+      "time_slot": "11:00",
+      "guests": 1,
+      "total_price": 55,
+      "commission": 8.25,
+      "net_payout": 46.75,
+      "status": "confirmed",
+      "payment_status": "paid",
+      "reference_number": "FF-100515",
+      "created_at": "2026-05-21T19:35:00.531Z"
+    }
+  ]
+}
