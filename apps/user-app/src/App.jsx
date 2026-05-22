@@ -118,14 +118,10 @@ function BottomNav() {
       <Link to="/" className="nav-fab">
         <IcCompass />
       </Link>
-      <Link to="/bookings" className={`nav-item`} style={{ color: 'var(--text3)' }}>
-        <IcUser />
+      <Link to="/profile" className={`nav-item ${path === '/profile' ? 'active' : ''}`}>
+        <IcUser filled={path === '/profile'} />
         <span className="nav-label">Profile</span>
       </Link>
-      <button className="nav-item" style={{ color: 'var(--text3)' }}>
-        <IcBell />
-        <span className="nav-label">Alerts</span>
-      </button>
     </nav>
   );
 }
@@ -255,8 +251,11 @@ function Home() {
                     <h3>{activity.name_en}</h3>
                     <p>{activity.description_en}</p>
                     <div className="activity-card-footer">
-                      <div className="price-label">
-                        KWD {activity.price_per_person?.toFixed(0)} <span>/ person</span>
+                      <div>
+                        <div className="price-label">
+                          KWD {activity.price_per_person?.toFixed(0)} <span>/ person</span>
+                        </div>
+                        {activity.rating && <div style={{ fontSize: '0.78rem', color: 'var(--text2)', marginTop: 2 }}>⭐ {activity.rating} rating</div>}
                       </div>
                       <div style={{
                         background: 'var(--yellow)',
@@ -579,6 +578,64 @@ function MyBookings() {
   );
 }
 
+/* ── Profile ── */
+
+function Profile() {
+  const [bookings, setBookings] = useState([]);
+
+  useEffect(() => {
+    fetchJson(`${API_URL}/bookings?user_id=${USER_ID}`).then(setBookings).catch(() => {});
+  }, []);
+
+  const totalSpent = bookings.reduce((s, b) => s + (b.total_price || 0), 0);
+
+  return (
+    <main className="page">
+      <header className="top-bar">
+        <div className="top-bar-greeting"><h1>My <span>Profile</span></h1></div>
+      </header>
+
+      <div style={{ padding: '0 1.25rem 2rem' }}>
+        {/* Avatar card */}
+        <div style={{ background: 'var(--yellow)', borderRadius: 28, padding: '2rem', marginBottom: '1rem', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', top: -30, right: -30, width: 120, height: 120, borderRadius: '50%', background: 'rgba(0,0,0,0.08)' }} />
+          <div style={{ width: 60, height: 60, borderRadius: '50%', background: 'rgba(0,0,0,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 900, color: '#000', marginBottom: '0.75rem' }}>L</div>
+          <div style={{ fontSize: '1.6rem', fontWeight: 900, letterSpacing: '-0.03em', color: '#000' }}>Laila Al-Sabah</div>
+          <div style={{ fontSize: '0.85rem', color: 'rgba(0,0,0,0.5)', fontWeight: 600, marginTop: 4 }}>laila@example.com · +96512345678</div>
+        </div>
+
+        {/* Stats */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.85rem', marginBottom: '1.5rem' }}>
+          <div style={{ background: 'var(--blue)', borderRadius: 20, padding: '1.25rem' }}>
+            <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '0.07em' }}>Bookings</div>
+            <div style={{ fontSize: '2rem', fontWeight: 900, letterSpacing: '-0.04em', color: '#fff' }}>{bookings.length}</div>
+          </div>
+          <div style={{ background: 'var(--green)', borderRadius: 20, padding: '1.25rem' }}>
+            <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(0,0,0,0.5)', textTransform: 'uppercase', letterSpacing: '0.07em' }}>Spent</div>
+            <div style={{ fontSize: '2rem', fontWeight: 900, letterSpacing: '-0.04em', color: '#000' }}>KWD {totalSpent.toFixed(0)}</div>
+          </div>
+        </div>
+
+        {/* Settings list */}
+        {[
+          { label: 'My Bookings', sub: `${bookings.length} trips booked`, to: '/bookings', color: 'var(--amber)' },
+          { label: 'Notifications', sub: 'Manage alerts', color: 'var(--blue)' },
+          { label: 'Language', sub: 'English / العربية', color: 'var(--surface2)' },
+          { label: 'Help & Support', sub: 'Contact us', color: 'var(--surface2)' },
+        ].map(({ label, sub, to, color }) => (
+          <Link key={label} to={to || '#'} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: '1rem 1.25rem', marginBottom: '0.65rem' }}>
+            <div>
+              <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>{label}</div>
+              <div style={{ fontSize: '0.8rem', color: 'var(--text2)', marginTop: 2 }}>{sub}</div>
+            </div>
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: color, flexShrink: 0 }} />
+          </Link>
+        ))}
+      </div>
+    </main>
+  );
+}
+
 /* ── App ── */
 
 export default function App() {
@@ -590,6 +647,7 @@ export default function App() {
         <Route path="/book/:id" element={<BookingFlow />} />
         <Route path="/booking-confirmation" element={<BookingConfirmation />} />
         <Route path="/bookings" element={<MyBookings />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <BottomNav />
     </div>
